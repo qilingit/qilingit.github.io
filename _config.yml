@@ -31,6 +31,8 @@ github_username:  qilingit
 theme: minima
 plugins:
   - jekyll-feed
+# Build settings
+markdown: kramdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.

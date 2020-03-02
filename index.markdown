@@ -4,4 +4,4 @@
 
 layout: home
 ---
-Test homepage
+Test homepage: Hello World !
