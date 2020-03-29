@@ -1,10 +1,14 @@
 ---
-layout: post
+`layout: post
 title:  "JavaScript data types and data structures"
 date:   2020-03-28 14:45:39 +0100
 categories: JavaScript
 ---
 # JavaScript data types and data structures
+[TOC]
+
+
+
 ## Dynamic typing
 
 JavaScript is a *loosely typed* or a *dynamic* language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and resigned) values of all types:
@@ -198,11 +202,77 @@ let sym3 = Symbol('foo')
 
 ### Objects
 
-In computer science, an object is a value in memory which is possibly referenced by an `identifier`. 
+In computer science, an object is **a value in memory** which is possibly referenced by an `identifier`. 
 
 #### Properties
 
-in JavaScript, objects can be seen as a collection
+in JavaScript, objects can be seen as a collection of properties. 
+
+Property values can be values of any type, including other objects, which enables building complex data structures. Properties are identified using *key* values. A *key* value is either a String or a Symbol value. 
+
+There are two types of object properties which have certain attributes: The *data* property and the *accessors* property. 
+
+##### Data property
+
+Associates of a key with a value, and has the following attributes: 
+
+**Attributes of a data property**
+
+| Attribute        | Type                | Description                                                  | Default value |
+| :--------------- | :------------------ | :----------------------------------------------------------- | :------------ |
+| [[Value]]        | Any JavaScript type | The value retrieved by a get access of the property.         | `undefined`   |
+| [[Writable]]     | Boolean             | If `false`, the property's [[Value]] cannot be changed.      | `false`       |
+| [[Enumerable]]   | Boolean             | If `true`, the property will be enumerated in [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loops. See also [Enumerability and ownership of properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties). | `false`       |
+| [[Configurable]] | Boolean             | If `false`, the property cannot be deleted, cannot be changed to an accessor property, and attributes other than [[Value]] and [[Writable]] cannot be changed. | `false`       |
+
+##### Accessor property
+
+Associates a key with one of tow accessor functions (`get` and `set` ) to retrieve or store a value, and has the following attributes: 
+
+**Attributes of an accessor property**
+
+| Attribute        | Type                           | Description                                                  | Default value |
+| :--------------- | :----------------------------- | :----------------------------------------------------------- | :------------ |
+| [[Get]]          | Function object or `undefined` | The function is called with an empty argument list and retrieves the property value whenever a get access to the value is performed. See also [`get`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/get). | `undefined`   |
+| [[Set]]          | Function object or `undefined` | The function is called with an argument that contains the assigned value and is executed whenever a specified property is attempted to be changed. See also [`set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/set). | `undefined`   |
+| [[Enumerable]]   | Boolean                        | If `true`, the property will be enumerated in [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loops. | `false`       |
+| [[Configurable]] | Boolean                        | If `false`, the property can't be deleted and can't be changed to a data property. | `false`       |
+
+**Note:** Attribute is usually used by JavaScript engine, so you can't directly access it (see more about [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)). That's why the attribute is put in double square brackets instead of single.
+
+
+
+#### "Normal" objects, and functions
+
+A JavaScript object is a mapping between *keys* and *values*. Keys are strings (or ` Symbol` ), and *values* can be anything This makes objects a natural fit for hashmpas.
+
+Functions are regular objects with the additional capability of being *callable*.
+
+#### Dates
+
+When representing dates, the best choice is to use the built-in [`Date` utility](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) in JavaScript.
+
+#### Indexed collections: Arrays and typed Arrays
+
+[Arrays](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array) are regular objects for which there is a particular relationship between integer-keyed properties and the ` length` property. 
+
+Additionally, arrays inherit from ` Array.prototype`, which provides to them a handful of convenient methods to manipulate arrays. For example, indexOf (searching a value in the array) or push (adding an element to the array), and so on. This makes Arrays a perfect candidate to represent lists or sets. 
+
+#### Keyed collections: Maps, Sets, WeakMaps, WeakSets
+
+These dqtq structures, introduced in ECMAScript Edition 6, take object references as keys. [`Set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) and [`WeakSet`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet) represent a set of objects, while [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) and [`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) associate a value to an object.
+
+The difference between  ` Maps` and `WeakMaps` is that in the former, object keys can be enumerated over. This allows garbage collection optimizations in the latter case. 
+
+One could implement `Map`s and `Set`s in pure ECMAScript 5. However, since objects cannot be compared (in the sense of `<` "less than", for instance), look-up performance would necessarily be linear. Native implementations of them (including `WeakMap`s) can have look-up performance that is approximately logarithmic to constant time.
+
+Usually, to bind data to a DOM node, one could set properties directly on the object, or use `data-*` attributes. This has the downside that the data is available to any script running in the same context. `Map`s and `WeakMap`s make it easy to *privately* bind data to an object.
+
+#### Structured data: JSON
+
+JSON (**J**ava**S**cript **O**bject **N**otation) is a lightweight data-interchange format, derived from JavaScript, but used by many programming languages. JSON builds universal data structures.
+
+See [JSON](https://developer.mozilla.org/en-US/docs/Glossary/JSON) and [`JSON`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) for more details.
 
 *References*
 
