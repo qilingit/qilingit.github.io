@@ -1,5 +1,5 @@
 ---
-`layout: post
+layout: post
 title:  "JavaScript data types and data structures"
 date:   2020-03-28 14:45:39 +0100
 categories: JavaScript
