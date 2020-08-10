@@ -7,7 +7,7 @@ tag :
 ```
 Reference: [JS FOR ALL Node.js 2019 guide](https://jsforall.com/nodejs/steps-to-create-first-nodejs-express-app/)
 
-<img src="../_src/node.js/Node.js_logo.png" width=30%/>
+![Node.js logo](/_src/node.js/Node.js_logo.png)
 
 ## Node.js: An introduction, what is Node.js
 
