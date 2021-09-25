@@ -18,13 +18,13 @@ Model, view, and controller are assigned the following roles:
 
 - The controller reacts to view events and user interaction by modifying the view and model.
 
-  <img src="../_src/sapui5/mvc.png" alt="drawing" width="700"/>
+  <img src="/assets/sapui5/mvc.png" alt="drawing" width="100%"/>
 
 ###  Models
 
 A model in the Model View Controller concept holds the data and provides methods to retrieve the data from the database and to set and update data.
 
-<img src="../_src/sapui5/model.png" alt="drawing" width="400"/>
+<img src="/assets/sapui5/model.png" alt="drawing" width="100%"/>
 
 ### Views
 
@@ -69,7 +69,7 @@ The suffix .controller.js is mandatory for controllers.
 
 You use data binding to bind UI elements to data sources to keep the data in sync and allow data editing on the UI
 
-<img src="../_src/sapui5/data_binding.png" alt="drawing" width="800"/>
+<img src="/assets/sapui5/data_binding.png" alt="drawing" width="100%"/>
 
 
 
@@ -527,7 +527,7 @@ Reference: [Formatting, Parsing, and Validating Data in SAP UI5](https://sapui5.
 
 Data that is presented on the UI often has to be converted so that is human readable and fits to the locale of the user. On the other hand, data entered by the user has to be parsed and validated to be understood by the data source. For this purpose, you use formatters and data types.
 
-![image](../_src/sapui5/DataFormatting.PNG)
+![image](/assets/sapui5/DataFormatting.PNG)
 
 Formatters are used to define the formatting of data on the UI while data types work in both directions: they format the data on the UI and parse and validate user input that is entered.
 

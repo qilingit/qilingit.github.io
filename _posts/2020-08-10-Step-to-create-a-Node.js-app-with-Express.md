@@ -1,13 +1,19 @@
 ```
-layout: post
-title: Steps to create a Node.js app with Express
-date: 2020-08-10 22:18:39 +0100
-tag : 
-- Node.js
+layout: 		post
+title: 			Steps to create a Node.js app with Express
+date: 			2020-08-10 22:18:39 +0100
+categories:     [tech]
+tags:			[]
+comments:       true
+excerpt:        >
+    TODO
+image:          /assets/node.js/Node.js_logo.png
+image:          /assets/node.js/node_hello_world.png
+ads:            none
 ```
 Reference: [JS FOR ALL Node.js 2019 guide](https://jsforall.com/nodejs/steps-to-create-first-nodejs-express-app/)
 
-![Node.js logo](/_src/node.js/Node.js_logo.png)
+<img src="/assets/node.js/Node.js_logo.png" alt="Node.js logo" width="100%">
 
 ## Node.js: An introduction, what is Node.js
 
@@ -96,4 +102,4 @@ Open a browser and type the url `http://localhost:8080/`, the congratulations we
 
 
 
-<img src="../_src/node.js/node_hello_world.png" width=80%/>
+<img src="/assets/node.js/node_hello_world.png" width=80%/>

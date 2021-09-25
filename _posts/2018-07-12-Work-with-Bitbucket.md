@@ -16,11 +16,7 @@ tags :
 
 1. Create an empty Repository in Bitbucket
 
-   ![bitbucketEmptyRepos](/images/bitbucketEmptyRepos.PNG)
-
-2. After create this empty repository, in the page of overview, we can see this indication below :
-
-   ![bitbucket_addLocalFile](/images/bitbucket_addLocalFile.PNG)
+2. After create this empty repository, in the page of overview, we can see the page to demand add repository.
 
 3. Go to the folder that you want to add to the repository, create the `.git` folder to initialize `git`workspace: 
 
